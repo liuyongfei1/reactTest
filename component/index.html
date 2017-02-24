@@ -8,14 +8,36 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
-      var HelloMessage = React.createClass({
-        render: function() {
-          return <h1>Hello {this.props.name}</h1>
+      // 测试1
+      // var HelloMessage = React.createClass({
+      //   render: function() {
+      //     return <h1>Hello {this.props.name}</h1>
+      //   }
+      // });
+      // ReactDOM.render(
+      //   <HelloMessage name="phping" />,
+      //   document.getElementById('example')
+      // )
+      // 测试2
+      var NotesList = React.createClass({
+        render : function () {
+          return (
+            <ol>
+              {
+                React.Children.map(this.props.children,function(child) {
+                  return <li>{child}</li>;
+                })
+              }
+            </ol>
+          )
         }
       });
       ReactDOM.render(
-        <HelloMessage name="phping" />,
-        document.getElementById('example')
+        <NotesList>
+          <span>hello</span>
+          <span>world</span>
+        </NotesList>,
+        document.body
       )
     </script>
   </body>
