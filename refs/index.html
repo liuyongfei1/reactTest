@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      // 需求：获取用户的文本框输入
+      // 分析：这个文本框是组件中的一个文本框，这时就必须获取真实的dom节点，虚拟dom是拿不到用户输入的
+      // 这时就提供了一个ref属性，然后this.refs.refsName就会返回这个真实的dom节点
+      var MyComponent = React.createClass({
+        handleClick: function() {
+          this.refs.myTextInput.focus();
+          alert(this.refs.myTextInput.value);
+        },
+
+        render: function() {
+          return (
+            <div>
+              <input type="text" ref="myTextInput" />
+              <input type="button" value="Focus the text input" onClick={this.handleClick} />
+            </div>
+          );
+        }
+      });
+      ReactDOM.render(
+        <MyComponent />,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
