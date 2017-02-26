@@ -8,26 +8,46 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
-      var LikeButton = React.createClass({
-        getInitialState : function(){
-          return {liked: false};
+      // var LikeButton = React.createClass({
+      //   getInitialState : function(){
+      //     return {liked: false};
+      //   },
+      //   handleClick : function (event) {
+      //     this.setState({liked:!this.state.liked});
+      //   },
+      //   render : function() {
+      //     var text = this.state.liked ? 'liked' : 'haven\'t not liked';
+      //     return(
+      //       <p onClick={this.handleClick}>
+      //       You {text} this.click to toggle
+      //       </p>
+      //     );
+      //   }
+      // });
+      // ReactDOM.render(
+      //   <LikeButton />,
+      //   document.getElementById('example')
+      // )
+
+      // demo2
+      var Input = React.createClass({
+        getInitialState : function() {
+          return {value : 'hello'};
         },
-        handleClick : function (event) {
-          this.setState({liked:!this.state.liked});
+        handleChange : function(event) {
+          this.setState({value : event.target.value});
         },
         render : function() {
-          var text = this.state.liked ? 'liked' : 'haven\'t not liked';
+          var value = this.state.value;
           return(
-            <p onClick={this.handleClick}>
-            You {text} this.click to toggle
-            </p>
+            <div>
+              <input type="text" value={value} onChange={this.handleChange} />
+              <p>{value}</p>
+            </div>
           );
         }
       });
-      ReactDOM.render(
-        <LikeButton />,
-        document.getElementById('example')
-      )
+      ReactDOM.render(<Input />,document.body);
     </script>
   </body>
 </html>
