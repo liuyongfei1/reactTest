@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+    <div id="example"></div>
+    <script type="text/babel">
+        // 组合组件 https://hulufei.gitbooks.io/react-tutorial/content/component-compose.html
+        const ProfilePic = (props) => {
+            return (
+                <img src={'http://cimage1.tianjimedia.com/uploadImages/2017/02/'  + props.username + '.jpg'} />
+            );
+        }
+
+        const ProfileLink = (props) => {
+            return (
+                <a href={'http://cimage1.tianjimedia.com/uploadImages/2017/02/'  + props.username + '.jpg'}>
+                    {props.username}
+                </a>
+            );
+        }
+
+        const Avator = (props) => {
+            return (
+                    <div>
+                        <ProfilePic username={props.username} />
+                        <ProfileLink username={props.username} />
+                    </div>
+            );
+        }
+
+        ReactDOM.render(
+            <Avator username="20170226110419314001" />,
+            document.getElementById('example')
+        )
+    </script>
+</body>
+</html>
