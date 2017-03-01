@@ -13,6 +13,16 @@
         let i = 'abcd';
         console.log(i);
     }
+
+    // 块级作用域,结果输出 5，外层代码块不受内层代码块的影响.如果换成var,则输出10
+    function f1() {
+        let n = 5;
+        if (true) {
+            let n = 10;
+        }
+        console.log(n); // 5
+    }
+    f1();
 </script>
 </body>
 </html>
