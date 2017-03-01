@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    // for循环的特别之处，就是循环语句部分是一个父作用域，而循环体内部是一个单独的子作用域。
+    for (let i = 0; i < 3; i++) {
+        let i = 'abcd';
+        console.log(i);
+    }
+</script>
+</body>
+</html>
