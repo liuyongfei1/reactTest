@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提取json数据</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+adsadas
+<script type="text/babel">
+    // 快速提取json数据
+    let jsonData = {
+        id : 88,
+        status : "ok",
+        data : [888,999]
+    };
+    let{ id,status,data } = jsonData;
+    console.log(id,status,data);
+
+    // 遍历map结构
+    var map = new Map();
+    map.set('first','hello');
+    map.set('second','world');
+
+    for (let [key, value] of map) {
+        console.log(key + " is " + value);
+    }
+
+    // 只获取key
+    for (let [key] of map) {
+        console.log(key);
+    }
+
+    // 只获取value
+    for(let[,value] of map) {
+        console.log(value);
+    }
+</script>
+</body>
+</html>
