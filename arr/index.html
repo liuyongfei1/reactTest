@@ -16,6 +16,17 @@
         <div>{arr}</div>,
         document.getElementById('example')
       )
+
+      let arrayLike = {
+        '0' : 'a',
+        '1' : 'b',
+        '2' : 'c',
+        'length' : 3,
+      };
+
+      // Array.from将NodeList集合转化为真正的对象，然后就可以是用Array的forEach对象进行循环了.
+      let arr2 = Array.from(arrayLike); // ['a', 'b', 'c']
+      console.dir(arr2);
     </script>
   </body>
 </html>
