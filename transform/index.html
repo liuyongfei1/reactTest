@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test transform</title>
+    <style type="text/css">
+
+        #block {
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 400px;
+            -webkit-transition: -webkit-transform 3s ease-out;
+            background-color: blue;
+            -webkit-transform: scale(1);
+        }
+
+        .zoom {
+            -webkit-transform: scale(2) !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="block" onclick="className='zoom';">The Block</div>
+</body>
+</html>
