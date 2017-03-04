@@ -27,6 +27,27 @@
       // Array.from将NodeList集合转化为真正的对象，然后就可以是用Array的forEach对象进行循环了.
       let arr2 = Array.from(arrayLike); // ['a', 'b', 'c']
       console.dir(arr2);
+
+      // Array.of用于将一组值转化为数组
+       let a =  Array.of(3,100,300);
+       console.dir(a);
+
+       // 数组实例的find()方法
+        let b = [1,4,-5,10].find((n) => n < 0 );
+        console.dir(37);
+
+      let c = [1,4,-5,10].find(function (value,index,arr) {
+          return value > 9;
+      });
+      console.log(c);
+
+      // 数组实例的findIndex方法的用法与find方法非常类似，
+      // 返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回-1。
+      let d = [1,4,-5,10].findIndex(function (value,index,arr) {
+          return value > 9;
+      })
+
+      console.log(d);
     </script>
   </body>
 </html>
