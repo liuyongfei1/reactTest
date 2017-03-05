@@ -23,6 +23,24 @@
         console.log(n); // 5
     }
     f1();
+
+    // for of 循环
+    const arr = ["red","green","blue"];
+    for (let v of arr) {
+        console.log(v);
+    }
+
+    const obj = {};
+    obj[Symbol.iterator] = arr[Symbol.iterator].bind(arr);
+    for (let v of obj) {
+        console.log(v);
+    }
+
+    // Set,Map结构
+    var engines = new Set(["a","b","c"]);
+    for (let v of engines) {
+        console.log(v);
+    }
 </script>
 </body>
 </html>
