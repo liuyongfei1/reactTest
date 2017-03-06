@@ -41,6 +41,16 @@
     for (let v of engines) {
         console.log(v);
     }
+
+    // Proxy
+    // proxy对象是obj对象的原型，obj对象本身并没有time属性，所以根据原型链，会在proxy对象上读取该属性，导致被拦截。
+    var proxy = new Proxy({}, {
+        get: function(target, property) {
+            return 35;
+        }
+    });
+    let obj = Object.create(proxy);
+    obj.time;
 </script>
 </body>
 </html>
