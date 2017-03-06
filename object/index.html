@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+</head>
+<body>
+<div id="example"></div>
+<script type="text/babel">
+    // http://es6.ruanyifeng.com/#docs/object
+    var birth = '2000/01/01';
+    var Person = {
+        name : '张三',
+        birth,
+        hello() {
+            console.log('我的名字是：',this.name);
+        }
+    }
+
+    Person.hello();
+
+    // 属性名表达式
+    var lastWord = 'last word';
+    var a = {
+        'first word' : 'hello',
+        [lastWord] : 'word'
+    }
+
+    console.log(a['first word']);
+    console.log(a[lastWord]);
+</script>
+</body>
+</html>
