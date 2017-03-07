@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>hello,world</p>
+    <p>hello,world</p>
+    <script>
+        // 一般的js写法
+//        var paragraphs = document.getElementsByTagName("p");
+//        for (var i = 0; i < paragraphs.length; i++) {
+//            var paragraph = paragraphs.item(i);
+//            paragraph.innerHTML = "I like nba";
+//        }
+    </script>
+    <!--d3写法-->
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script>
+        d3.select("body").selectAll("p").text("d3js...")
+    </script>
+</body>
+</html>
