@@ -29,6 +29,24 @@
 
     console.log(a['first word']);
     console.log(a[lastWord]);
+
+    // 函数的name属性返回函数名
+    const person = {
+        sayName() {
+            console.log('hello');
+        }
+    };
+
+    console.log(person.sayName.name); // sayName
+
+    // Object assign
+    var target = {a: 1};
+    var source1 = {b: 2};
+    var source2 = {c: 3};
+
+    Object.assign(target,source1,source2);
+
+    console.log(target);
 </script>
 </body>
 </html>
