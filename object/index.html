@@ -18,7 +18,7 @@
         }
     }
 
-    Person.hello();
+//    Person.hello();
 
     // 属性名表达式
     var lastWord = 'last word';
@@ -27,8 +27,8 @@
         [lastWord] : 'word'
     }
 
-    console.log(a['first word']);
-    console.log(a[lastWord]);
+//    console.log(a['first word']);
+//    console.log(a[lastWord]);
 
     // 函数的name属性返回函数名
     const person = {
@@ -37,7 +37,7 @@
         }
     };
 
-    console.log(person.sayName.name); // sayName
+//    console.log(person.sayName.name); // sayName
 
     // Object assign
     var target = {a: 1};
@@ -46,7 +46,18 @@
 
     Object.assign(target,source1,source2);
 
-    console.log(target);
+//    console.log(target);
+
+
+    // Object.setPrototypeOf() 作用与__proto__相同
+    let proto = {};
+    let obj = { x : 10};
+    Object.setPrototypeOf(obj,proto);
+
+    proto.y = 20;
+    proto.z = 30;
+
+    console.dir(obj)
 </script>
 </body>
 </html>
