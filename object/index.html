@@ -57,7 +57,12 @@
     proto.y = 20;
     proto.z = 30;
 
-    console.dir(obj)
+//    console.dir(obj)
+
+    // Object.keys方法返回一个数组，成员是参数对象自身的(不含继承的)所有可遍历属性的键名
+    var obj2 = {name : 'phping',age : '30'};
+    var keys = Object.keys(obj2);
+    console.log(keys); // ['name','age']
 </script>
 </body>
 </html>
