@@ -78,6 +78,22 @@
     })
 
     console.dir(Object.values(obj3)); // [40]
+
+    // Object.entries 方法返回一个数组,成员是参数对象自身的(不含继承的)所有可遍历属性的键值对数组
+    console.dir(Object.entries(obj2)); // [['name','phping'],'age',30]
+
+    // Object.entriesd的基本用途是遍历对象的属性
+    let obj5 = { one : 1, two : 2};
+    for (let [k, v] of Object.entries(obj5)) {
+        console.log(
+//            `${Json.stringfy(k)} : ${Json.stringfy(v)}`
+            `${(k)} : ${(v)}`    // one :1    two : 2
+        );
+    }
+
+    // Object.entries的另一个作用是将对象转化为真正的Map结构
+    var map = new Map(Object.entries(obj2));
+    console.dir(map); // Map {name : "phping",age : 30}
 </script>
 </body>
 </html>
