@@ -63,6 +63,21 @@
     var obj2 = {name : 'phping',age : '30'};
     var keys = Object.keys(obj2);
     console.log(keys); // ['name','age']
+
+    // Object.values方法返回一个数组，成员是参数对象自身的(不含继承的)所有可遍历属性的键值
+    console.dir(Object.values(obj2)); // ['phping','30']
+
+    // Object.create
+    // Object.create方法的第二个参数添加的对象属性（属性p），如果不显式声明，默认是不可遍历的
+    // 只要把enumerable改成true，Object.values就会返回属性p的值
+    var obj3 = Object.create({},{p :
+        {
+            value : 40,
+            enumerable : true,
+        }
+    })
+
+    console.dir(Object.values(obj3)); // [40]
 </script>
 </body>
 </html>
