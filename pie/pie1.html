@@ -52,17 +52,8 @@
     }
 </style>
 <body>
-<form>
-    <label><input type="radio" name="dataset" id="dataset" value="total" checked> Total</label>
-    <label><input type="radio" name="dataset" id="dataset" value="option1"> Option 1</label>
-    <label><input type="radio" name="dataset" id="dataset" value="option2"> Option 2</label>
-</form>
-
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
-
-
-    d3.select("input[value=\"total\"]").property("checked", true);
 
     var svg = d3.select("body")
         .append("svg")
@@ -95,10 +86,6 @@
         .innerRadius(radius * 0.9)
         .outerRadius(radius * 0.9);
 
-    var legendRectSize = (radius * 0.05);
-    var legendSpacing = radius * 0.02;
-
-
     var div = d3.select("body").append("div").attr("class", "toolTip");
 
     svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -106,7 +93,7 @@
     var colorRange = d3.scale.category20();
     var color = d3.scale.ordinal()
         .range(colorRange.range());
-
+    console.log(color);
 
     datasetTotal = [
         {label:"Category 1", value:19},
@@ -117,28 +104,6 @@
         {label:"Category 6", value:27}
     ];
 
-//    change(datasetTotal);
-
-
-//    d3.selectAll("input")
-//        .on("change", selectDataset);
-
-    // function selectDataset()
-    // {
-    //     var value = this.value;
-    //     if (value == "total")
-    //     {
-    //         change(datasetTotal);
-    //     }
-    //     else if (value == "option1")
-    //     {
-    //         change(datasetOption1);
-    //     }
-    //     else if (value == "option2")
-    //     {
-    //         change(datasetOption2);
-    //     }
-    // }
 
     /* ------- PIE SLICES -------*/
     var slice = svg.select(".slices").selectAll("path.slice")
@@ -152,6 +117,7 @@
     slice
         .transition().duration(1000)
         .attrTween("d", function(d) {
+            console.log(120);
             this._current = this._current || d;
             var interpolate = d3.interpolate(this._current, d);
             this._current = interpolate(0);
