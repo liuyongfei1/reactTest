@@ -52,7 +52,7 @@
     }
 </style>
 <body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/d3.v4.min.js"></script>
 <script>
 
     var svg = d3.select("body")
@@ -72,17 +72,17 @@
         height = 450,
         radius = Math.min(width, height) / 2;
 
-    var pie = d3.layout.pie()
+    var pie = d3.pie()
         .sort(null)
         .value(function(d) {
             return d.value;
         });
 
-    var arc = d3.svg.arc()
+    var arc = d3.arc()
         .outerRadius(radius * 0.8)
         .innerRadius(radius * 0.4);
 
-    var outerArc = d3.svg.arc()
+    var outerArc = d3.arc()
         .innerRadius(radius * 0.9)
         .outerRadius(radius * 0.9);
 
@@ -90,10 +90,10 @@
 
     svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-    var colorRange = d3.scale.category20();
-    var color = d3.scale.ordinal()
-        .range(colorRange.range());
-    console.log(color);
+    var color = d3.scaleBand()
+        .domain(["Lorem ipsum", "dolor sit", "amet", "consectetur", "adipisicing", "elit", "sed", "do", "eiusmod", "tempor", "incididunt"])
+        .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
 
     datasetTotal = [
         {label:"Category 1", value:19},
@@ -190,10 +190,10 @@
 
     var polyline = svg.select(".lines").selectAll("polyline")
         .data(pie(datasetTotal), function(d){ return d.data.label });
-
+//
     polyline.enter()
         .append("polyline");
-
+//
     polyline.transition().duration(1000)
         .attrTween("points", function(d){
             this._current = this._current || d;
@@ -206,9 +206,9 @@
                 return [arc.centroid(d2), outerArc.centroid(d2), pos];
             };
         });
-
-    polyline.exit()
-        .remove();
+//
+//    polyline.exit()
+//        .remove();
 
 
 </script>

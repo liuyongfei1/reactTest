@@ -94,6 +94,11 @@
     // Object.entries的另一个作用是将对象转化为真正的Map结构
     var map = new Map(Object.entries(obj2));
     console.dir(map); // Map {name : "phping",age : 30}
+
+    // 对象的扩展运算符
+    const [b,...c] = [1,2,3];
+    console.log(b); // 1
+    console.log(c); // [2,3]
 </script>
 </body>
 </html>
