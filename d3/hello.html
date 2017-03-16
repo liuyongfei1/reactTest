@@ -19,7 +19,24 @@
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script>
         // selectAll
-        d3.select("body").selectAll("p").text("d3js...")
+//        d3.select("body").selectAll("p").text("d3js...")
+
+        // dataum 绑定一个数组到选择集上
+        // 假设有一个字符串China,要将此字符串分别与三个段落元素绑定
+        var str = "China";
+        var body = d3.select("body");
+        var p = body.selectAll("p");
+        
+        p.datum(str);
+        
+        p.text(function (d,i) {
+            return "第" + i  + "个元素绑定的数据是 " + d;
+        });
+
+        // 第0个元素绑定的数据是 China
+
+        // 第1个元素绑定的数据是 China
+
     </script>
 </body>
 </html>
