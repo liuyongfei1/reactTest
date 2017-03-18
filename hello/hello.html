@@ -40,6 +40,27 @@
             play();
             fire();
         })
+
+      // hackthis: 在这里，你希望在内层函数里写的是this.add(piece)，不幸的是，内层函数并未从外层函数继承this的值。
+      // 在内层函数里，this会是window或undefined，临时变量self用来将外部的this值导入内部函数。
+      // （另一种方式是在内部函数上执行.bind(this)，两种方法都不甚美观。）
+      // es5写法
+      {
+          addAll : function addAll(pieces) {
+              var self = this;
+              _.each(pieces,function (piece) {
+                  self.add(piece)
+              })
+          }
+      }
+
+      // es6写法
+      {
+          addAll : function addAll(pieces) {
+              _.each(pieces,piece => this.add(piece))
+          }
+      }
+
     </script>
   </body>
 </html>
