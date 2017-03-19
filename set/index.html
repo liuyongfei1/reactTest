@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type = "text/babel">
+        // es6提供了新的数据结构Set.它类似于数组，但是成员值都是唯一的，没有重复的值。
+      const s = new Set();
+      [2, 3, 5, 4, 5, 2, 2].forEach(x => s.add(x));
+      console.dir(s);
+
+    </script>
+  </body>
+</html>
