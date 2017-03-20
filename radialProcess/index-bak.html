@@ -270,7 +270,7 @@
             return function (t) {
                 d.endAngle= interpolateCircle(t);
                 var pathDummyCircle = arcDummy(d);
-
+                console.dir(pathDummyCircle);
                 var coordinate = pathDummyCircle.split("L")[1].split("A")[0];
 
                 if(d.endAngle>.25 && d.endAngle < (2*Math.PI-.14))
@@ -301,7 +301,7 @@
 
         oldValue=percent;
         percent=(Math.random() * 60) + 20;
-        setTimeout(animate,3000);
+//        setTimeout(animate,3000);
     };
 
     setTimeout(animate,0);
