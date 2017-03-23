@@ -22,6 +22,16 @@
         </div>,
         document.getElementById('example')
       )
+
+      // javascript的对象本质上是键值对的集合(hansh结构)，但是传统上只能用字符串当做键，为了解决这个问题，es6提供了Map结构。
+      // 它类似于对象，也是键值对的集合，但是键的范围不限于字符串，各种类型的值(包括对象)都可以当做键。
+      var m = new Map();
+      var o = {p : 'hello world'};
+      m.set(o,'content');
+      m.get(o); // content
+      m.has(0); // true
+      m.delete(o); // true;
+      m.has(o); // false;
     </script>
   </body>
 </html>
