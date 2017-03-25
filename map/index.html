@@ -32,6 +32,17 @@
       m.has(0); // true
       m.delete(o); // true;
       m.has(o); // false;
+
+      // 做为构造函数，Map也可以接受一个数组做为参数
+      var map = new Map([
+         ['name','liu'],
+         ['title','author']
+      ]);
+
+      console.log(map.size); // 2
+      console.log(map.has('name')); // true;
+      console.log(map.get('name')); // 张三
+      console.log(map.get('title')); // true
     </script>
   </body>
 </html>
