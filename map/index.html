@@ -43,6 +43,31 @@
       console.log(map.has('name')); // true;
       console.log(map.get('name')); // 张三
       console.log(map.get('title')); // true
+
+      var map1 =  new Map();
+      map1.set(1,'aaa')
+          .set(1,'bbb')
+
+      console.log(map1.get(1)); // bbb
+
+      // 扩展运算符 ...
+      let set = new Set(['red','green','blue']);
+      let arr1 = [...set];
+      console.dir(arr1); // ['red','green','blue']
+
+      // 扩展运算符和Set结合，就可以去除数组的重复成员
+      let arr2 = [3, 5, 2, 2, 5, 5];
+      let unique = [...new Set(arr2)];  [3,5,2]
+      console.dir(unique);
+
+      let set1 = new Set([1,2,3]);
+      set1 = new Set([...set1].map(x => x * 2));// 返回set结构 {2, 4, 6}
+      console.dir(set1);
+
+      let set3 = new Set([1, 2, 3, 4, 5]);
+      set3 = new Set([...set3].filter(x => (x % 2) == 0));// 返回set结构 {2, 4}
+      console.dir(set3);
+
     </script>
   </body>
 </html>
