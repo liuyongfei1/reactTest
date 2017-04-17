@@ -57,8 +57,8 @@
 
       // 扩展运算符和Set结合，就可以去除数组的重复成员
       let arr2 = [3, 5, 2, 2, 5, 5];
-      let unique = [...new Set(arr2)];  [3,5,2]
-      console.dir(unique);
+      let unique = [...new Set(arr2)];
+      console.dir(unique); // [3,5,2]
 
       let set1 = new Set([1,2,3]);
       set1 = new Set([...set1].map(x => x * 2));// 返回set结构 {2, 4, 6}

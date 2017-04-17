@@ -26,20 +26,37 @@
 
       // Array.from将NodeList集合转化为真正的对象，然后就可以是用Array的forEach对象进行循环了.
       let arr2 = Array.from(arrayLike); // ['a', 'b', 'c']
-      console.dir(arr2);
+//      console.dir(arr2);
 
       // Array.of用于将一组值转化为数组
-       let a =  Array.of(3,100,300);
-       console.dir(a);
+      // Arroy.of基本上可以用来替代Array()或new Array()
+      // Array.of(); // []
+      // Array.of(undefined); // [undefined]
+      // Array.of(1); // [1]
+      // Array.of(1,2); // [1,2]
 
-       // 数组实例的find()方法
-        let b = [1,4,-5,10].find((n) => n < 0 );
-        console.dir(37);
+      let a =  Array.of(3,100,300);
+//      console.dir(a);
+      // 数组实例的copyWithin()
+
+      // Array.prototype.copyWithin(target, start = 0, end = this.length)
+      // target: 从该位置开始替换数据
+      // start:从该位置开始读取数据，默认为0。如果为负值，表示倒数
+      // end:到该位置前停止读取数据，默认等于数组长度。如果为负值，表示倒数。
+      let a1 = [1,2,3,4,5].copyWithin(0,3);  // 将从3号位直到数组结束的成员(4和5)，复制到从0号位开始的位置，结果覆盖了原来的1和2
+      console.dir(a1);
+
+      let a2 = [1,2,3,4,5].copyWithin(0,3,4); // 将3号位复制到0号位
+      console.dir(a2); // [4,2,3,4,5]
+
+      // 数组实例的find()方法
+      let b = [1,4,-5,10].find((n) => n < 0 );
+//      console.dir(37);
 
       let c = [1,4,-5,10].find(function (value,index,arr) {
           return value > 9;
       });
-      console.log(c);
+//      console.log(c);
 
       // 数组实例的findIndex方法的用法与find方法非常类似，
       // 返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回-1。
@@ -47,7 +64,7 @@
           return value > 9;
       })
 
-      console.log(d);
+//      console.log(d);
     </script>
   </body>
 </html>
