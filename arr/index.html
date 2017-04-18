@@ -65,6 +65,10 @@
       })
 
 //      console.log(d);
+
+      // 扩展运算符也会调用默认的iterator接口
+      let arr1 = ['b','c'];
+      console.dir('a',...arr1,'d'); // ['a','b','c','d']
     </script>
   </body>
 </html>
