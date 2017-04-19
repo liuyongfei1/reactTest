@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!- ace代码编辑器->
+    <!--<script src="./ace.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./jquery.js"></script>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <style type="text/css">
+        #editor {
+            /** Setting height is also important, otherwise editor wont showup**/
+            height: 175px;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <span class="panel-title">Editor</span>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <h4>Ace Editor</h4>
+                <div class="col-md-6">
+                    <div id="editor">function foo(items) {
+                        var x = "All this is syntax highlighted";
+                        return x;
+                        }</div>
+                </div>
+                <div class="col-md-6">
+                    <h4>Textarea</h4>
+                    <textarea class="col-md-6" name="content" id="content" rows="5" cols="70" disabled="disabled"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">---End of editor---</div>
+    <button class="btn btn-primary" id="toggletextarea-btn">Hide TextArea</button>
+    <button class="btn btn-default" id="alertcontent-btn">Alert Content</button>
+    <br/>
+    <br/>
+</div>
+<script type="text/javascript">
+    var textarea = $('#content');
+
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.getSession().setMode("ace/mode/javascript");
+
+    editor.getSession().on('change', function () {
+        textarea.val(editor.getSession().getValue());
+    });
+
+    textarea.val(editor.getSession().getValue());
+
+    $("#toggletextarea-btn").on('click', function () {
+        textarea.toggle();
+        $(this).text(function (i, text) {
+            return text === "Show Content" ? "Hide Content" : "Show Content";
+        });
+    });
+
+    $("#alertcontent-btn").on('click', function () {
+        alert(textarea.val());
+    });
+</script>
+</body>
+</html>
