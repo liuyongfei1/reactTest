@@ -77,6 +77,27 @@
         console.log(func());
     }
     bar(); // outer
+
+    // es6引入rest参数(形式为"...变量名"),用于获取函数的多余参数，这样就不需要使用arguments对象了。
+    function add(...values) {
+        let sum = 0;
+        for (var val of values) {
+            sum += val;
+        }
+        return sum;
+    }
+    add(2,5,3); // 10
+
+    // 下面是一个利用reset参数改写数组push方法的例子
+    function push(array,...items) {
+        items.forEach(function (item) {
+            array.push(item);
+            console.log(item);
+        })
+    }
+
+    var a = [];
+    push(a,1,2,3);
 </script>
 </body>
 </html>
