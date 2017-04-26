@@ -123,6 +123,15 @@
 
     let args = [0,1,2];
     f(...args);
+
+    // 扩展运算符的应用：与解构赋值结合
+    const [first,...rest] = [1,2,3,4,5];
+    console.log(first); // 1
+    console.log(rest); // [2,3,4,5]
+
+    const[first,...rest] = [];
+    console.log(first); //undefined
+    console.log(rest); // []
 </script>
 </body>
 </html>
