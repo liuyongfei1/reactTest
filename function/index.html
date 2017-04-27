@@ -139,6 +139,22 @@
     var f =  function (v) {
         return v;
     }
+
+    // 如果箭头函数不需要参数或需要多个参数,就使用一个圆括号代表参数部分
+    var f = () => 5;
+    // 等价于：
+    var f =  function () {
+        return 5;
+    }
+
+    var sum = (num1,num2) => num1 + num2;
+    // 等同于
+    var sum = function (num1,num2) {
+        return num1 + num2;
+    }
+
+    // 由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号
+    var sum = id => ({id: id,name : "temp"});
 </script>
 </body>
 </html>
