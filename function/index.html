@@ -155,6 +155,23 @@
 
     // 由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号
     var sum = id => ({id: id,name : "temp"});
+
+    // 箭头函数可以让this指向固定化，这种特性很有利于封装回调函数
+    // es6
+    function foo() {
+        setTimeout(() => {
+            console.log('id:',this.id);
+        })
+    }
+
+    // es5
+    function foo() {
+        var _this = this;
+        setTimeout(function () {
+            console.log('id:',_this.id);
+        })
+    }
+    // 转换后的ES5版本清楚地说明了，箭头函数里面根本没有自己的this，而是引用外层的this。
 </script>
 </body>
 </html>
