@@ -99,6 +99,16 @@
     const [b,...c] = [1,2,3];
     console.log(b); // 1
     console.log(c); // [2,3]
+
+    // 对象的扩展
+    // es6允许字面量定义对象时，用表达式做为对象的属性名，即把表达式放在括号内
+    let propKey = 'foo';
+    let obj1 = {
+        [propKey] : true,
+        ['a' + 'bc'] : 123
+    }
+    console.log(109);
+    console.dir(obj1);
 </script>
 </body>
 </html>
