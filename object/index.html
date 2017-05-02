@@ -127,6 +127,17 @@
 
     Object.is(+0,-0); // false
     Object.is(NaN,NaN);  // true
+
+    // Object.assign()
+    var target = {a:1};
+    var source1 = {b:2};
+    var source2 = {c:3};
+    Object.assign(target,source1,source2); // {a:1,b:2,c:3}
+
+    // 对于这种嵌套的对象，一旦遇到同名属性，Object.assign的处理方法是替换，而不是添加。
+    var target1 = { a: { b: 'c', d: 'e' } }
+    var source1 = { a: { b: 'hello' } }
+    Object.assign(target1,source1); // {a: {b: 'hello'}
 </script>
 </body>
 </html>
