@@ -150,6 +150,9 @@
     console.log(obj.y); // 20
     console.log(obj.z); // 40
     // 上面代码将proto对象设置为obj对象的原型,所以从obj对象可以读取proto对象的属性
+
+    var obj = { foo: 'bar', baz: 42 };
+    console.dir(Object.keys(obj)); // ['foo','baz']
 </script>
 </body>
 </html>
