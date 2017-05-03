@@ -138,6 +138,18 @@
     var target1 = { a: { b: 'c', d: 'e' } }
     var source1 = { a: { b: 'hello' } }
     Object.assign(target1,source1); // {a: {b: 'hello'}
+
+    // Object.setPrototypeOf方法的作用与__proto__相同，用来设置一个对象的prototype对象，返回参数对象本身。
+    let proto = {};
+    let obj = { x : 10};
+    Object.setPrototypeOf(obj,proto);
+    proto.y = 20;
+    proto.z = 40;
+
+    console.log(obj.x); // 10
+    console.log(obj.y); // 20
+    console.log(obj.z); // 40
+    // 上面代码将proto对象设置为obj对象的原型,所以从obj对象可以读取proto对象的属性
 </script>
 </body>
 </html>
