@@ -153,6 +153,21 @@
 
     var obj = { foo: 'bar', baz: 42 };
     console.dir(Object.keys(obj)); // ['foo','baz']
+
+    // Object.assign()方法有很多用处:
+    // 1.为对象添加属性
+    class Point {
+        constructor(x,y) {
+            Object.assign(this,{x,y})
+        }
+    }
+    // 上面方法通过Object.assign方法，将x属性和y属性添加到Point类的对象实例
+    // 2.为对象添加方法
+    // 3.克隆对象
+    function clone(origin) {
+        return Object.assign({},origin)
+    }
+    // 上面代码将原始对象拷贝到一个空对象，就得到了原始对象的克隆。
 </script>
 </body>
 </html>
