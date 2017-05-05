@@ -168,6 +168,9 @@
         return Object.assign({},origin)
     }
     // 上面代码将原始对象拷贝到一个空对象，就得到了原始对象的克隆。
+
+    // 将多个对象合并到某个对象。
+    const merge =(target,...sources) => Object.assign(target,...sources);
 </script>
 </body>
 </html>
