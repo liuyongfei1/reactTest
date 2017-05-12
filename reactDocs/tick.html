@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rendering-elements</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <script src="../build/jquery.min.js"></script>
+    <script type="text/babel">
+      // 优化后的时钟的例子，使用了组件的概念，引进看生命周期函数
+      class Clock extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {date: new Date()};
+        }
+
+        componentDidMount() {
+          this.timerID = setInterval(
+            () => this.tick(),
+            1000
+          );
+        }
+
+        componentWillUnmount() {
+          clearInterval(this.timerID);
+        }
+
+        tick() {
+          this.setState({
+            date: new Date()
+          });
+        }
+
+        render() {
+          return (
+                  <div>
+                      <h1>Hello, world!</h1>
+                      <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+                  </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+              <Clock />,
+        document.getElementById('root')
+      );
+    </script>
+</head>
+<body>
+<div id="root"></div>
+<!--Test rendering-elements-->
+</body>
+</html>
