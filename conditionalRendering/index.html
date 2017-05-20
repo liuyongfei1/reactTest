@@ -28,6 +28,23 @@
           <Mailbox unreadMessages={messages}/>,
           document.getElementById('root')
         )
+
+      /**
+       * 更大的表达式
+      render() {
+        const isLoggedIn = this.state.isLoggedIn;
+        return (
+                <div>
+                  {
+                    isLoggedIn ? (
+                            <LogoutButton onClick={this.handleLogoutClick} />
+                    ) : (
+                            <LoginButton onClick={this.handleLoginClick} />
+                    )
+                  }
+                </div>
+        )
+      }*/
     </script>
 </head>
 <body>
