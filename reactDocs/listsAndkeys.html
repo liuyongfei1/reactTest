@@ -17,6 +17,19 @@
               document.getElementById('root')
       );
 
+      // 在jsx中嵌入map
+      function NumberList (props) {
+        const numbers = props.numbers;
+        const listItems = numbers.map((number) =>
+            <ListItem key = {number.toString()} value={number}/>
+        );
+        return  (
+                <ul>
+                  {listItems}
+                </ul>
+        )
+      }  
+
     </script>
 </head>
 <body>
