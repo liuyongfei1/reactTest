@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forms</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <script src="../build/jquery.min.js"></script>
+    <script type="text/babel">
+      // BoilingVerdict组件接受摄氏温度做为prop,并打印是否足以使水沸腾
+      function BoilingVerdict (props) {
+        if (props.celsius >= 100) {
+          return <p>The water would boil.</p>;
+        }
+        return <p>The water would not boil.</p>;
+      }
+
+      // 创建一个Calculator，它渲染一个input让你输入温度，并在this.state.temperature中保存它的值。
+      // 另外，它会根据当前输入的温度来渲染BoilingVerdict
+      class Calculator extends React.Component {
+        constructor(props) {
+          super(props);
+          this.handleChange = this.handleChange.bind(this);
+          this.state = {temperature: ''};
+        }
+
+        handleChange(e) {
+          this.setState({temperature: e.target.value});
+        }
+
+        render() {
+          const temperature = this.state.temperature;
+          return (
+                  <fieldset>
+                      <legend>Enter temperature in Celsius:</legend>
+                      <input
+                              value={temperature}
+                              onChange={this.handleChange} />
+                      <BoilingVerdict
+                              celsius={parseFloat(temperature)} />
+                  </fieldset>
+          );
+        }
+      }
+
+      ReactDOM.render(
+              <Calculator/>,
+        document.getElementById('root')
+      )
+    </script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+</html>
