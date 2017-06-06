@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forms</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <script src="../build/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="index2.css">
+    <script type="text/babel">
+      // 组合和继承对比
+      function Contacts() {
+        return <div className="Contacts" />;
+      }
+
+      function Chat() {
+        return <div className="Chat" />;
+      }
+
+      function SplitPane(props) {
+        return (
+                <div className="SplitPane">
+                    <div className="SplitPane-left">
+                      {props.left}
+                    </div>
+                    <div className="SplitPane-right">
+                      {props.right}
+                    </div>
+                </div>
+        );
+      }
+      
+      function App () {
+        return (
+          <SplitPane
+          left={
+            <Contacts/>
+          }
+          right={
+            <Chat/>
+          }
+          />
+        )
+      }
+
+      ReactDOM.render(
+        <App/>,
+        document.getElementById('root')
+      )
+    </script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+</html>
